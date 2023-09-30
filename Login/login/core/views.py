@@ -12,7 +12,7 @@ def login_user(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                redirect('/admin/')
+                return redirect('/admin/')
         # Redirect to a success page.
             else:
                 messages.error(request, "No está en la base de datos")
